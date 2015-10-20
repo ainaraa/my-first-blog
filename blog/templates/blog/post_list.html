@@ -5,6 +5,13 @@
     <body>
         <div> <h1> el blog de Ainara </h1>
         </div>
+         {% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date}} </p>
+            <h1><a href="">{{post.title}}</a></h1>
+            <p>{{post.text|linebreaks}} </p>
+        </div>
+        {% endfor %}
         <div> <p> publicado: hoy </p>
             <h2><a href =""> Un titulo </a> </h2>
             <p> aqui esta el post numero  <strong>1</strong> </p>
