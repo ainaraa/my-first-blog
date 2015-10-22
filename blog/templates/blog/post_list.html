@@ -1,23 +1,42 @@
+{% load staticfiles %}
 <html>
     <head> <title> el blog de Ainara </title>
+
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel = "stylesheet" href = "{% static "css/blog.css" %}">
+        <link href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
     </head>
 
     <body>
-        <div> <h1> el blog de Ainara </h1>
+        <div class ="page-header"> <h1> el blog de Ainara </h1>
         </div>
-         {% for post in posts %}
         <div>
-            <p>published: {{ post.published_date}} </p>
-            <h1><a href="">{{post.title}}</a></h1>
-            <p>{{post.text|linebreaks}} </p>
+            <iframe src="http://dashboards.ly/ua-EfiMULhxfJsemo4uQ9Teb4" width="100%" height="1000px" style="border: none;"></iframe>
         </div>
-        {% endfor %}
-        <div> <p> publicado: hoy </p>
+
+        <div class ="content container">
+            <div class = "row">
+                <div class = "col-md-8">
+                 {% for post in posts %}
+                    <div class = "post">
+                        <div class="date">
+                                <p>published: {{ post.published_date}} </p>
+                        </div>
+                        <h1><a href="">{{post.title}}</a></h1>
+                        <p>{{post.text|linebreaks}} </p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+        <div > <p> publicado: hoy </p>
             <h2><a href =""> Un titulo </a> </h2>
             <p> aqui esta el post numero  <strong>1</strong> </p>
         </dIv>
 
-           <div> <p> publicado: hoy </p>
+           <div > <p> publicado: hoy </p>
             <h2><a href =""> El 2o titulo </a> </h2>
             <p> <ul><li> <em>una</em> cosa </li>
                             <li> otra cosa </li>
